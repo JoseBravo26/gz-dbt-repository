@@ -11,27 +11,31 @@ sources:
         - name: sales
           identifier: raw_gz_sales
           description: renamed table
+          freshness:
+            warn_after: {count: 90, period: day}
+          loaded_at_field: "CAST(date_date as TIMESTAMP)" 
+          
         - name: ship
           identifier: raw_gz_ship
           description: renamed table
 
 models:
-  - name: stg_data__product.sql
+  - name: stg_data__product
     columns:
         - name: products_id
           tests:
           - unique
           - not_null
-  - name: stg_data__ship.sql
+  - name: stg_data__ship
     columns:
       - name: orders_id
         tests:
         - unique
         - not_null
             
-  - name: stg_data__sales.sql
+  - name: stg_data__sales
     tests:
        - dbt_utils.unique_combination_of_columns:
            combination_of_columns:
               - orders_id
-              - products_id
+              - products_id  
