@@ -54,3 +54,31 @@ models:
            combination_of_columns:
               - orders_id
               - products_id  
+
+  - name: stg_data__adwords
+    columns:
+      - name: date_date
+        tests:
+        - unique
+        - not_null
+  
+  - name: stg_data__bing
+    columns:
+      - name: date_date
+        tests:
+        - unique
+        - not_null
+  
+  - name: stg_data__criteo
+    columns:
+      - name: date_date
+        tests:
+        - unique
+        - not_null
+  
+  - name: stg_data__facebook
+    columns:
+      - name: date_date
+        tests:
+        - unique
+        - not_null
