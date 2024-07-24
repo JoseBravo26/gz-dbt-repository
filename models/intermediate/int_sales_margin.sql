@@ -9,3 +9,4 @@ SELECT
 FROM {{ ref('stg_data__sales') }} s
 left JOIN {{ ref('stg_data__product') }} p
   using (products_id)
+
