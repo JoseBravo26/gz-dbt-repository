@@ -41,6 +41,7 @@ models:
           tests:
           - unique
           - not_null
+
   - name: stg_data__ship
     columns:
       - name: orders_id
@@ -59,26 +60,30 @@ models:
     columns:
       - name: date_date
         tests:
-        - unique
         - not_null
   
   - name: stg_data__bing
     columns:
       - name: date_date
         tests:
-        - unique
         - not_null
   
   - name: stg_data__criteo
     columns:
       - name: date_date
         tests:
-        - unique
         - not_null
   
   - name: stg_data__facebook
     columns:
       - name: date_date
         tests:
+          - not_null
+        
+  - name: int_campaigns_day
+    columns:
+      - name: date_date
+        tests:
         - unique
         - not_null
+            
